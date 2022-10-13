@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+import { Form } from './Components/Form/Form';
+import { List } from './Components/List/List';
+
+export const App = () => {
+  let todos = [
+    {
+      id: 1,
+      task: 'task 1',
+      completed: false,
+    },
+    {
+      id: 2,
+      task: 'task 2',
+      completed: true,
+    },
+    {
+      id: 3,
+      task: 'task 3',
+      completed: false,
+    },
+  ];
+
+  const [todo, setTodo] = useState<any>(todos);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Form setTodo={setTodo} todo={todo} />
+      <List setTodo={setTodo} todo={todo} />
     </div>
   );
-}
-
-export default App;
+};

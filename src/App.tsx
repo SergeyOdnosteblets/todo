@@ -1,32 +1,13 @@
 import React, { useState } from 'react';
-
-import { Form } from './Components/Form/Form';
-import { List } from './Components/List/List';
+import { Todo } from './Components/Todo/Todo';
+import './App.scss';
 
 export const App = () => {
-  let todos = [
-    {
-      id: 1,
-      task: 'task 1',
-      completed: false,
-    },
-    {
-      id: 2,
-      task: 'task 2',
-      completed: true,
-    },
-    {
-      id: 3,
-      task: 'task 3',
-      completed: false,
-    },
-  ];
+  const [backGround, setBackGround] = useState(true);
 
-  const [todo, setTodo] = useState<any>(todos);
   return (
-    <div>
-      <Form setTodo={setTodo} todo={todo} />
-      <List setTodo={setTodo} todo={todo} />
+    <div className={backGround ? 'App light' : 'App dark'}>
+      <Todo setBackGround={setBackGround} backGround={backGround} />
     </div>
   );
 };

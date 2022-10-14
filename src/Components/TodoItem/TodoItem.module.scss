@@ -1,0 +1,14 @@
+.item {
+  border: 1px solid black;
+  padding: 5px;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.text {
+  text-decoration: line-through;
+  opacity: 0.5;
+}

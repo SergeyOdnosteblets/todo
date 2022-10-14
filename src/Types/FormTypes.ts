@@ -1,4 +1,5 @@
 export interface FormTypes {
-    todo: any
-    setTodo: any
+    todos: any
+    setTodos: (event: any) => void
 }
+

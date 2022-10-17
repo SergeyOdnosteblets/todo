@@ -37,7 +37,6 @@ export const Todo: React.FC<TodoType> = ({ backGround, setBackGround }) => {
         filteredTodos={filteredTodos}
         backGround={backGround}
       />
-      <div></div>
     </div>
   );
 };

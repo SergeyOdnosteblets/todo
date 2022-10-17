@@ -1,2 +1,22 @@
 .todoList {
+  background: #26283d;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.light {
+  background: #ffffff;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+}
+
+.statusItems {
+  margin-top: 10px;
+  text-align: center;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .statusItems {
+    display: block;
+  }
 }

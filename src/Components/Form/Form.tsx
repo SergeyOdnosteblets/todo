@@ -3,7 +3,7 @@ import { FormTypes } from '../../Types/FormTypes';
 
 import style from './Form.module.scss';
 
-export const Form: React.FC<FormTypes> = ({ setTodos, todos }) => {
+export const Form: React.FC<FormTypes> = ({ setTodos, todos, backGround }) => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
@@ -23,7 +23,11 @@ export const Form: React.FC<FormTypes> = ({ setTodos, todos }) => {
   return (
     <div className={style.form}>
       <form onSubmit={handleSubmit} autoComplete="off">
-        <input placeholder="Create a new todo..." name="todo" />
+        <input
+          placeholder="Create a new todo..."
+          name="todo"
+          className={backGround ? `${style.input} ${style.light}` : `${style.input}`}
+        />
       </form>
     </div>
   );

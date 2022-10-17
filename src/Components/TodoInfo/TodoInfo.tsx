@@ -1,33 +1,36 @@
 import React from 'react';
 import { TaskType } from '../../Types/TaskType';
-import { TodoListType } from '../../Types/TodoListType';
+import { TodoInfoType } from '../../Types/TodoInfoType';
+import { StatusItems } from '../StatusItems/StatusItems';
 
-export const TodoInfo: React.FC<TodoListType> = ({ todos, setTodos, setFilteredTodos }) => {
+import style from './TodoInfo.module.scss';
+
+export const TodoInfo: React.FC<TodoInfoType> = ({
+  todos,
+  setTodos,
+  backGround,
+  getActiveTasks,
+  getCompletedTasks,
+  getAllTasks,
+}) => {
   const delCompletedTasks = () => {
     setTodos(todos.filter((item: TaskType) => item.completed === false));
   };
 
-  const getActiveTasks = () => {
-    setFilteredTodos(todos.filter((item: TaskType) => item.completed === false));
-  };
-
-  const getCompletedTasks = () => {
-    setFilteredTodos(todos.filter((item: TaskType) => item.completed === true));
-  };
-
-  const getAllTasks = () => {
-    setFilteredTodos(todos);
-  };
-
   return (
-    <div>
+    <div className={style.info}>
       <div>{todos.filter((item: TaskType) => item.completed === false).length} items left</div>
-      <div>
-        <button onClick={getAllTasks}>All</button>
-        <button onClick={getActiveTasks}>Active</button>
-        <button onClick={getCompletedTasks}>Completed</button>
-        <button onClick={delCompletedTasks}>Clear Completed</button>
+      <div className={style.statusItems}>
+        <StatusItems
+          backGround={backGround}
+          getActiveTasks={getActiveTasks}
+          getCompletedTasks={getCompletedTasks}
+          getAllTasks={getAllTasks}
+        />
       </div>
+      <button onClick={delCompletedTasks} className={backGround ? style.button : ''}>
+        Clear Completed
+      </button>
     </div>
   );
 };

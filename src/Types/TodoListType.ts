@@ -3,6 +3,7 @@ export interface TodoListType {
     setTodos: (event: any) => void
     setFilteredTodos:(event: any) => void
     filteredTodos: any
+    backGround: boolean
 }
 
 

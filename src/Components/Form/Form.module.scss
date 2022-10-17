@@ -1,5 +1,5 @@
 .form {
-  input {
+  .input {
     width: 100%;
     padding: 10px 10px;
     margin-bottom: 10px;
@@ -8,5 +8,10 @@
     border-radius: 5px;
     background: #26283d;
     color: white;
+  }
+
+  .light {
+    background: white;
+    color: #26283d;
   }
 }

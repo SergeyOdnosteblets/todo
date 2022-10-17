@@ -26,16 +26,18 @@ export const Todo: React.FC<TodoType> = ({ backGround, setBackGround }) => {
       <div className={style.title}>
         <div className={style.title__text}>Todo</div>
         <button onClick={() => onChangeBackGround()}>
-          <img src={moon} alt="" className={style.icon} />
+          <img src={backGround ? moon : sun} alt="" className={style.icon} />
         </button>
       </div>
-      <Form todos={todos} setTodos={setTodos} />
+      <Form todos={todos} setTodos={setTodos} backGround={backGround} />
       <TodoList
         todos={todos}
         setTodos={setTodos}
         setFilteredTodos={setFilteredTodos}
         filteredTodos={filteredTodos}
+        backGround={backGround}
       />
+      <div></div>
     </div>
   );
 };

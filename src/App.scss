@@ -10,13 +10,17 @@
 }
 
 .light {
-  background-image: url('./Images/bg-desktop-dark.jpg');
+  background-image: url('./Images/bg-desktop-light.jpg');
   background-repeat: no-repeat;
-  background-color: white;
+  background-color: #fafafa;
 }
 
 .dark {
-  background-image: url('./Images/bg-desktop-light.jpg');
+  background-image: url('./Images/bg-desktop-dark.jpg');
   background-repeat: no-repeat;
   background-color: rgb(28, 5, 5);
+}
+
+.test {
+
 }

@@ -7,13 +7,13 @@ import delDark from '../../Images/icon-cross-dark.svg';
 import delLight from '../../Images/icon-cross-light.svg';
 import check from '../../Images/icon-check.svg';
 
-export const TodoItem: React.FC<TodoItemType> = ({ todo, deleteTask, checkedTask, backGround }) => {
+export const TodoItem: React.FC<TodoItemType> = ({ todo, deleteTask, checkedTask, theme }) => {
   return (
     <>
       <Reorder.Item
         value={todo}
         key={todo.id}
-        className={backGround ? `${style.item} ${style.light}` : `${style.item}`}>
+        className={theme ? `${style.item} ${style.light}` : `${style.item}`}>
         <div className={style.task} onClick={() => checkedTask(todo.id)}>
           <div
             className={
@@ -29,9 +29,9 @@ export const TodoItem: React.FC<TodoItemType> = ({ todo, deleteTask, checkedTask
         </div>
         <button onClick={() => deleteTask(todo.id)}>
           <img
-            src={backGround ? delDark : delLight}
+            src={theme ? delDark : delLight}
             alt=""
-            className={backGround ? `${style.btn__del} ${style.del__light}` : style.btn__del}
+            className={theme ? `${style.btn__del} ${style.del__light}` : style.btn__del}
           />
         </button>
       </Reorder.Item>

@@ -1,12 +1,11 @@
+import { TaskType } from "./TaskType"
+
 export interface TodoInfoType {
-    todos: any
-    setTodos: (event: any) => void
-    filteredTodos: any
-    backGround: boolean
-    getActiveTasks: (event: any) => void
-    getCompletedTasks: (event: any) => void
-    getAllTasks: (event: any) => void
+    todos: TaskType[]
+    setTodos: (event: TaskType[]) => void
+    filteredTodos: TaskType[]
+    theme: boolean
+    getActiveTasks: () => void
+    getCompletedTasks: () => void
+    getAllTasks: () => void
 }
-
-
-

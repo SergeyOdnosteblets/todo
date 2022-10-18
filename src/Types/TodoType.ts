@@ -1,7 +1,4 @@
 export interface TodoType {
-  backGround: boolean
-  setBackGround: (arg:boolean) => void
+  theme: boolean
+  setTheme: (arg: boolean) => void
 }
-
-
-

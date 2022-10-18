@@ -1,7 +1,6 @@
 export interface StatusType {
-    backGround: boolean
+    theme: boolean
     getActiveTasks: (event: any) => void
     getCompletedTasks: (event: any) => void
     getAllTasks: (event: any) => void
 }
-

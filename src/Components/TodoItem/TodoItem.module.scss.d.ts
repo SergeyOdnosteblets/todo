@@ -10,6 +10,3 @@ export const box: string
 export const task: string
 export const image: string
 export const box__completed: string
-
-
-

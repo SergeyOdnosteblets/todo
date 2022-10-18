@@ -8,27 +8,27 @@ import style from './TodoInfo.module.scss';
 export const TodoInfo: React.FC<TodoInfoType> = ({
   todos,
   setTodos,
-  backGround,
+  onBackgroundChange,
   getActiveTasks,
   getCompletedTasks,
   getAllTasks,
 }) => {
   const delCompletedTasks = () => {
-    setTodos(todos.filter((item: TaskType) => item.completed === false));
+    setTodos(todos.filter((item: TaskType) => !item.completed));
   };
 
   return (
     <div className={style.info}>
-      <div>{todos.filter((item: TaskType) => item.completed === false).length} items left</div>
+      <div>{todos.filter((item: TaskType) => !item.completed).length} items left</div>
       <div className={style.statusItems}>
         <StatusItems
-          backGround={backGround}
+          onBackgroundChange={onBackgroundChange}
           getActiveTasks={getActiveTasks}
           getCompletedTasks={getCompletedTasks}
           getAllTasks={getAllTasks}
         />
       </div>
-      <button onClick={delCompletedTasks} className={backGround ? style.button : ''}>
+      <button onClick={delCompletedTasks} className={onBackgroundChange ? style.button : ''}>
         Clear Completed
       </button>
     </div>

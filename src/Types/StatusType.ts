@@ -1,5 +1,5 @@
 export interface StatusType {
-    backGround: boolean
+    onBackgroundChange: boolean
     getActiveTasks: (event: any) => void
     getCompletedTasks: (event: any) => void
     getAllTasks: (event: any) => void

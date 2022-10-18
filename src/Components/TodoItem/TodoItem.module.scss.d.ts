@@ -6,5 +6,3 @@ export const checkmark: string
 export const light: string
 export const del__light: string
 
-
-

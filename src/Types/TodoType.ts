@@ -1,7 +1,5 @@
 export interface TodoType {
-  backGround: boolean
-  setBackGround: (arg:boolean) => void
+  onBackgroundChange: boolean
+  setOnBackgroundChange: (arg: boolean) => void
 }
-
-
 

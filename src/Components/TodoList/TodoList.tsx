@@ -20,13 +20,12 @@ export const TodoList: React.FC<TodoListType> = ({
   };
 
   const checkedTask = (id: number) => {
-    let newTodos = [...todos].filter((item: TaskType) => {
-      if (item.id === id) {
-        return (item.completed = !item.completed);
-      } else {
-        return item;
-      }
-    });
+    let newTodos = [...todos];
+    let index = newTodos.findIndex((item) => item.id === id);
+    let element = newTodos[index];
+    element.completed = !element.completed;
+    newTodos.splice(index, 1, element);
+
     setTodos(newTodos);
   };
 

@@ -15,19 +15,19 @@ export const TodoList: React.FC<TodoListType> = ({
   filteredTodos,
   onBackgroundChange,
 }) => {
-  const [refresh, setRefresh] = useState(false);
   const deleteTask = (id: number) => {
     setTodos(todos.filter((item: TaskType) => item.id !== id));
   };
 
   const checkedTask = (id: number) => {
-    todos.filter((item: TaskType) => {
+    let newTodos = [...todos].filter((item: TaskType) => {
       if (item.id === id) {
         return (item.completed = !item.completed);
+      } else {
+        return item;
       }
     });
-    setTodos(todos);
-    setRefresh(!refresh);
+    setTodos(newTodos);
   };
 
   const getActiveTasks = () => {

@@ -3,12 +3,11 @@ import { Todo } from './Components/Todo/Todo';
 import './App.scss';
 
 export const App = () => {
-  const [onBackgroundChange, setOnBackgroundChange] = useState(false);
+  const [theme, setTheme] = useState(false);
 
   return (
-    <div className={onBackgroundChange ? 'App isLightBackground' : 'App isDarkBackground'}>
-      <Todo setOnBackgroundChange={setOnBackgroundChange} onBackgroundChange={onBackgroundChange} />
-      
+    <div className={theme ? 'App isLightBackground' : 'App isDarkBackground'}>
+      <Todo setTheme={setTheme} theme={theme} />
     </div>
   );
 };

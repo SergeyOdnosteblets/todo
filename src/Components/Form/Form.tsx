@@ -3,7 +3,7 @@ import { FormTypes } from '../../Types/FormTypes';
 
 import style from './Form.module.scss';
 
-export const Form: React.FC<FormTypes> = ({ setTodos, todos, onBackgroundChange }) => {
+export const Form: React.FC<FormTypes> = ({ setTodos, todos, theme }) => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
@@ -26,7 +26,7 @@ export const Form: React.FC<FormTypes> = ({ setTodos, todos, onBackgroundChange 
         <input
           placeholder="Create a new todo..."
           name="todo"
-          className={onBackgroundChange ? `${style.input} ${style.light}` : `${style.input}`}
+          className={theme ? `${style.input} ${style.light}` : `${style.input}`}
         />
       </form>
     </div>

@@ -9,7 +9,7 @@ import moon from '../../Images/icon-moon.svg';
 import sun from '../../Images/icon-sun.svg';
 import { TodoType } from '../../Types/TodoType';
 
-export const Todo: React.FC<TodoType> = ({ onBackgroundChange, setOnBackgroundChange }) => {
+export const Todo: React.FC<TodoType> = ({ theme, setTheme }) => {
   const [todos, setTodos] = useState<TaskType[] | []>([]);
   const [filteredTodos, setFilteredTodos] = useState(todos);
 
@@ -18,7 +18,7 @@ export const Todo: React.FC<TodoType> = ({ onBackgroundChange, setOnBackgroundCh
   }, [todos]);
 
   const onChangeBackGround = () => {
-    setOnBackgroundChange(!onBackgroundChange);
+    setTheme(!theme);
   };
 
   return (
@@ -26,16 +26,16 @@ export const Todo: React.FC<TodoType> = ({ onBackgroundChange, setOnBackgroundCh
       <div className={style.title}>
         <div className={style.title__text}>Todo</div>
         <button onClick={onChangeBackGround}>
-          <img src={onBackgroundChange ? moon : sun} alt="" className={style.icon} />
+          <img src={theme ? moon : sun} alt="" className={style.icon} />
         </button>
       </div>
-      <Form todos={todos} setTodos={setTodos} onBackgroundChange={onBackgroundChange} />
+      <Form todos={todos} setTodos={setTodos} theme={theme} />
       <TodoList
         todos={todos}
         setTodos={setTodos}
         setFilteredTodos={setFilteredTodos}
         filteredTodos={filteredTodos}
-        onBackgroundChange={onBackgroundChange}
+        theme={theme}
       />
     </div>
   );

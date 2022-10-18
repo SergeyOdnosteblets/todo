@@ -13,7 +13,7 @@ export const TodoList: React.FC<TodoListType> = ({
   setTodos,
   setFilteredTodos,
   filteredTodos,
-  onBackgroundChange,
+  theme,
 }) => {
   const deleteTask = (id: number) => {
     setTodos(todos.filter((item: TaskType) => item.id !== id));
@@ -44,7 +44,7 @@ export const TodoList: React.FC<TodoListType> = ({
   return (
     <>
       <div
-        className={onBackgroundChange ? `${style.todoList} ${style.light}` : `${style.todoList}`}>
+        className={theme ? `${style.todoList} ${style.light}` : `${style.todoList}`}>
         <Reorder.Group as="ul" axis="y" values={todos} onReorder={setTodos}>
           {filteredTodos.map((todo: TaskType) => {
             return (
@@ -53,7 +53,7 @@ export const TodoList: React.FC<TodoListType> = ({
                 todo={todo}
                 deleteTask={deleteTask}
                 checkedTask={checkedTask}
-                onBackgroundChange={onBackgroundChange}
+                theme={theme}
               />
             );
           })}
@@ -62,7 +62,7 @@ export const TodoList: React.FC<TodoListType> = ({
           todos={todos}
           setTodos={setTodos}
           filteredTodos={filteredTodos}
-          onBackgroundChange={onBackgroundChange}
+          theme={theme}
           getActiveTasks={getActiveTasks}
           getCompletedTasks={getCompletedTasks}
           getAllTasks={getAllTasks}
@@ -70,9 +70,9 @@ export const TodoList: React.FC<TodoListType> = ({
       </div>
       <div className={style.statusItems}>
         <div
-          className={onBackgroundChange ? `${style.todoList} ${style.light}` : `${style.todoList}`}>
+          className={theme ? `${style.todoList} ${style.light}` : `${style.todoList}`}>
           <StatusItems
-            onBackgroundChange={onBackgroundChange}
+            theme={theme}
             getActiveTasks={getActiveTasks}
             getCompletedTasks={getCompletedTasks}
             getAllTasks={getAllTasks}

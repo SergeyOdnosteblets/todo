@@ -1,5 +1,4 @@
 export interface TodoType {
-  onBackgroundChange: boolean
-  setOnBackgroundChange: (arg: boolean) => void
+  theme: boolean
+  setTheme: (arg: boolean) => void
 }
-

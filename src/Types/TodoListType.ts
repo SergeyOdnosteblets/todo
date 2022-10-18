@@ -5,5 +5,5 @@ export interface TodoListType {
     setTodos: (event: TaskType[]) => void
     setFilteredTodos:(event: TaskType[]) => void
     filteredTodos: TaskType[] | []
-    onBackgroundChange: boolean
+    theme: boolean
 }

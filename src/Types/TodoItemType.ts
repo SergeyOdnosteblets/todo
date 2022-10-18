@@ -4,5 +4,5 @@ export interface TodoItemType {
     todo: TaskType
     deleteTask: (id: number) => void
     checkedTask: (id: number) => void
-    onBackgroundChange: boolean
+    theme: boolean
 }

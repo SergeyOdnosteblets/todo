@@ -5,4 +5,3 @@ export const btn__del: string
 export const checkmark: string
 export const light: string
 export const del__light: string
-

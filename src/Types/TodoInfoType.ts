@@ -4,11 +4,8 @@ export interface TodoInfoType {
     todos: TaskType[]
     setTodos: (event: TaskType[]) => void
     filteredTodos: TaskType[]
-    onBackgroundChange: boolean
+    theme: boolean
     getActiveTasks: () => void
     getCompletedTasks: () => void
     getAllTasks: () => void
 }
-
-
-
